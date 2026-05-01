@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - To-Do App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="todo-card">
+        <header class="header">
+          <p class="eyebrow">Productive Day</p>
+          <h1>TaskFlow</h1>
+          <p class="subtitle">Plan, track, and complete tasks with due date and time.</p>
+        </header>
+
+        <form class="task-form" id="taskForm">
+          <label class="field field-wide">
+            <span>Task</span>
+            <input
+              id="taskInput"
+              type="text"
+              placeholder="Enter a task..."
+              autocomplete="off"
+              required
+            />
+          </label>
+          <label class="field">
+            <span>Date</span>
+            <input id="dateInput" type="date" />
+          </label>
+          <label class="field">
+            <span>Time</span>
+            <input id="timeInput" type="time" />
+          </label>
+          <button class="btn btn-primary" type="submit">Add Task</button>
+        </form>
+
+        <section class="toolbar">
+          <p class="stats" id="statsText">0 total · 0 completed · 0 pending</p>
+          <div class="filter-group" role="group" aria-label="Filter tasks">
+            <button class="btn btn-filter is-active" data-filter="all" type="button">
+              All
+            </button>
+            <button class="btn btn-filter" data-filter="pending" type="button">
+              Pending
+            </button>
+            <button class="btn btn-filter" data-filter="completed" type="button">
+              Completed
+            </button>
+          </div>
+        </section>
+
+        <ul class="task-list" id="taskList"></ul>
+        <p class="empty-state" id="emptyState">No tasks yet. Add your first task above.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
